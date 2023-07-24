@@ -1,6 +1,6 @@
 const COLORS = {
   primary: '#052458',
-  secondary: '#FAFAFC',
+  secondary: '#EFEFEF',
   tertiary: '#FF4F35',
   grey: '#9C9C9C',
   lightGrey: '#D4D4D4',
@@ -16,6 +16,7 @@ const FONT = {
   regular: 'TitilliumWeb-Regular',
   semibold: 'TitilliumWeb-SemiBold',
   semiBoldItalic: 'TitilliumWeb-SemiBoldItalic',
+  nasa: 'Nasa',
 };
 
 const SIZES = {
