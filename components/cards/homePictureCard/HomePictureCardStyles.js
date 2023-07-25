@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {FONT, COLORS, SIZES, SHADOWS} from '../../constants/theme';
+import {FONT, COLORS, SIZES, SHADOWS} from '../../../constants/theme';
 
 export const styles = StyleSheet.create({
   picOfTheDayCard: {
-    padding: SIZES.medium,
+    paddingTop: SIZES.medium,
+    paddingLeft: SIZES.medium,
+    paddingRight: SIZES.medium,
     marginVertical: SIZES.medium,
     backgroundColor: COLORS.lightGrey,
   },
@@ -37,7 +39,7 @@ export const styles = StyleSheet.create({
     borderRadius: SIZES.small,
   },
   picOfTheDayTitle: {
-    fontFamily: FONT.italic,
+    fontFamily: FONT.semiBoldItalic,
     fontSize: SIZES.medium,
     color: COLORS.primary,
     textAlign: 'center',

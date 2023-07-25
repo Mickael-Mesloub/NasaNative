@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import Home from '../screens/home/HomeScreen';
 import Gallery from '../screens/gallery/GalleryScreen';
-import {COLORS, FONT} from '../constants/theme';
+import {COLORS, FONT, SIZES} from '../constants/theme';
 import logo from '../assets/logo.png';
 import ScreenHeader from '../components/screenHeader/ScreenHeader';
 
@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 const homeName = 'Home';
 const galleryName = 'Gallery';
-const options = ({navigation}) => {
+const tabScreenOptions = ({navigation}) => {
   return {
     headerTitle: 'NASA',
     headerTitleStyle: {
@@ -45,6 +45,7 @@ const BottomTabBar = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           color = focused ? COLORS.tertiary : COLORS.primary;
+          size = SIZES.xLarge;
           if (route.name === homeName) {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === galleryName) {
@@ -53,8 +54,12 @@ const BottomTabBar = () => {
           return <Icon name={iconName} size={size} color={color} />;
         },
       })}>
-      <Tab.Screen name={homeName} component={Home} options={options} />
-      <Tab.Screen name={galleryName} component={Gallery} options={options} />
+      <Tab.Screen name={homeName} component={Home} options={tabScreenOptions} />
+      <Tab.Screen
+        name={galleryName}
+        component={Gallery}
+        options={tabScreenOptions}
+      />
     </Tab.Navigator>
   );
 };

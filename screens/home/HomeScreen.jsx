@@ -4,15 +4,16 @@ import {styles} from './HomeStyles';
 import {API_URL, API_KEY} from '@env';
 import {GET} from '../../helpers/fetch';
 import {COLORS} from '../../constants/theme';
-import PictureCard from '../../components/cards/PictureCard';
+import HomePictureCard from '../../components/cards/homePictureCard/HomePictureCard';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
+  const endpoint = '?api_key=';
 
   const fetchData = async () => {
     try {
-      const data = await GET(`${API_URL}?api_key=${API_KEY}`);
+      const data = await GET(`${API_URL}${endpoint}${API_KEY}`);
       setData(data);
       console.log(data);
     } catch (error) {
@@ -33,7 +34,10 @@ const HomeScreen = () => {
         <ActivityIndicator size={'large'} color={COLORS.tertiary} />
       ) : (
         <ScrollView>
-          <PictureCard data={data} />
+          <HomePictureCard
+            data={data}
+            handlePress={() => navigation.navigate('Gallery')}
+          />
         </ScrollView>
       )}
     </SafeAreaView>
