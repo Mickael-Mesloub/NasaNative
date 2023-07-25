@@ -1,13 +1,8 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import BottomTabBar from './BottomTabBar';
 
 const AppNavigation = () => {
-  return (
-    <NavigationContainer>
-      <BottomTabBar />
-    </NavigationContainer>
-  );
+  return <BottomTabBar />;
 };
 
 export default AppNavigation;
