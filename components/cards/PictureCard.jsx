@@ -1,7 +1,8 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, ActivityIndicator} from 'react-native';
 import React from 'react';
 import {styles} from './PictureCardStyles';
 import {formatDate} from '../../helpers/utils';
+import {COLORS} from '../../constants/theme';
 
 const PictureCard = ({data}) => {
   return (
@@ -11,11 +12,16 @@ const PictureCard = ({data}) => {
 
         <Text style={styles.picOfTheDayDate}>{formatDate(data?.date)}</Text>
       </View>
-      <Image
-        source={{uri: data?.hdurl}}
-        resizeMode="cover"
-        style={styles.picOfTheDayImage}
-      />
+      {data.hdurl ? (
+        <Image
+          source={{uri: data?.hdurl}}
+          resizeMode="cover"
+          style={styles.picOfTheDayImage}
+        />
+      ) : (
+        <ActivityIndicator size={'large'} color={COLORS.tertiary} />
+      )}
+
       <Text style={styles.picOfTheDayTitle}>{data?.title}</Text>
       <Text style={styles.picOfTheDayCopyright}>{data?.copyright}</Text>
     </View>

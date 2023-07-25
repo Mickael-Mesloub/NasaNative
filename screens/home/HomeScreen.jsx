@@ -1,19 +1,10 @@
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  TouchableOpacity,
-  Image,
-  SafeAreaView,
-  ScrollView,
-} from 'react-native';
+import {ActivityIndicator, SafeAreaView, ScrollView} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {styles} from './HomeStyles';
 import {API_URL, API_KEY} from '@env';
 import {GET} from '../../helpers/fetch';
 import {COLORS} from '../../constants/theme';
 import PictureCard from '../../components/cards/PictureCard';
-import BottomTabBar from '../../components/bottomTabBar/BottomTabBar';
 
 const HomeScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
