@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-
-import BottomTabBar from '../components/bottomTabBar/BottomTabBar';
+import BottomTabBar from './BottomTabBar';
 
 const AppNavigation = () => {
   return (

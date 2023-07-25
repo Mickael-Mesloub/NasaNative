@@ -10,7 +10,7 @@ const HomeScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
 
-  const search = async () => {
+  const fetchData = async () => {
     try {
       const data = await GET(`${API_URL}?api_key=${API_KEY}`);
       setData(data);
@@ -24,7 +24,7 @@ const HomeScreen = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    search();
+    fetchData();
   }, []);
 
   return (
