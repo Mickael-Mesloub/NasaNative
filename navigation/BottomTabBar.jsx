@@ -6,7 +6,7 @@ import Home from '../screens/home/HomeScreen';
 import Gallery from '../screens/gallery/GalleryScreen';
 import {COLORS, FONT, SIZES} from '../constants/theme';
 import logo from '../assets/logo.png';
-import ScreenHeader from '../components/screenHeader/ScreenHeader';
+import ScreenHeaderLogoBtn from '../components/screenHeaderLogoBtn/ScreenHeaderLogoBtn';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,11 +20,11 @@ const tabScreenOptions = ({navigation}) => {
     },
     headerTitleAlign: 'center',
     headerStyle: {
-      backgroundColor: COLORS.secondary,
+      backgroundColor: COLORS.tertiary,
     },
     headerLeft: () => {
       return (
-        <ScreenHeader
+        <ScreenHeaderLogoBtn
           iconUrl={logo}
           dimension={'100%'}
           handlePress={() => navigation.navigate(homeName)}
@@ -38,13 +38,13 @@ const BottomTabBar = () => {
   return (
     <Tab.Navigator
       initialRouteName={homeName}
-      activeTintColor={COLORS.tertiary}
-      inactiveTintColor={COLORS.primary}
+      activeTintColor={COLORS.secondary}
+      inactiveTintColor={COLORS.secondary}
       screenOptions={({route}) => ({
         tabBarShowLabel: false,
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
-          color = focused ? COLORS.tertiary : COLORS.primary;
+          color = focused ? COLORS.secondary : COLORS.primary;
           size = SIZES.xLarge;
           if (route.name === homeName) {
             iconName = focused ? 'home' : 'home-outline';

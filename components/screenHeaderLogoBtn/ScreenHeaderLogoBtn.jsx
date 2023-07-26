@@ -1,8 +1,8 @@
-import {Image, Text, Pressable} from 'react-native';
+import {Image, Pressable} from 'react-native';
 import React from 'react';
-import {styles} from './ScreenHeaderStyles';
+import {styles} from './ScreenHeaderLogoBtnStyles';
 
-const ScreenHeader = ({iconUrl, dimension, handlePress}) => {
+const ScreenHeaderLogoBtn = ({iconUrl, dimension, handlePress}) => {
   return (
     <Pressable style={styles.btnContainer} onPress={handlePress}>
       <Image
@@ -14,4 +14,4 @@ const ScreenHeader = ({iconUrl, dimension, handlePress}) => {
   );
 };
 
-export default ScreenHeader;
+export default ScreenHeaderLogoBtn;

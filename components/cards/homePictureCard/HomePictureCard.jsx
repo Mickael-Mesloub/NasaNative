@@ -29,14 +29,16 @@ const PictureCard = ({data, handlePress}) => {
         <Text style={styles.mainTitle}>Picture Of the Day</Text>
 
         <Text style={styles.picOfTheDayDate}>{data?.date}</Text>
-        <IconButton
-          iconOptions={{
-            name: 'share-social',
-            size: SIZES.large,
-            color: COLORS.primary,
-          }}
-          onPress={share}
-        />
+        <View style={styles.iconContainer}>
+          <IconButton
+            iconOptions={{
+              name: 'share-social',
+              size: SIZES.large,
+              color: COLORS.tertiary,
+            }}
+            onPress={share}
+          />
+        </View>
       </View>
       {data.url ? (
         <>
@@ -47,7 +49,7 @@ const PictureCard = ({data, handlePress}) => {
           />
         </>
       ) : (
-        <ActivityIndicator size={'large'} color={COLORS.tertiary} />
+        <ActivityIndicator size={'large'} color={COLORS.secondary} />
       )}
       <View style={{paddingTop: SIZES.small}}>
         <Text style={styles.picOfTheDayTitle}>{data?.title}</Text>

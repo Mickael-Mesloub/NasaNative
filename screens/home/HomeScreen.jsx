@@ -1,10 +1,11 @@
-import {ActivityIndicator, SafeAreaView, ScrollView} from 'react-native';
+import {ActivityIndicator, SafeAreaView, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {styles} from './HomeStyles';
 import {API_URL, API_KEY} from '@env';
 import {GET} from '../../helpers/fetch';
 import {COLORS} from '../../constants/theme';
 import HomePictureCard from '../../components/cards/homePictureCard/HomePictureCard';
+import PictureModal from '../../components/pictureModal/PictureModal';
 
 const HomeScreen = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,14 +32,14 @@ const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       {isLoading ? (
-        <ActivityIndicator size={'large'} color={COLORS.tertiary} />
+        <ActivityIndicator size={'large'} color={COLORS.secondary} />
       ) : (
-        <ScrollView>
+        <View>
           <HomePictureCard
             data={data}
             handlePress={() => navigation.navigate('Gallery')}
           />
-        </ScrollView>
+        </View>
       )}
     </SafeAreaView>
   );

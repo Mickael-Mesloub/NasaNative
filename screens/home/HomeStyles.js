@@ -4,6 +4,7 @@ import {FONT, COLORS, SIZES, SHADOWS} from '../../constants/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.secondary,
+    justifyContent: 'center',
+    backgroundColor: COLORS.tertiary,
   },
 });

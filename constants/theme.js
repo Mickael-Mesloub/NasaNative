@@ -1,11 +1,11 @@
 const COLORS = {
-  primary: '#052458',
-  secondary: '#EFEFEF',
-  tertiary: '#FF4F35',
+  primary: '#009688',
+  secondary: 'rgba(255, 55, 24, 0.70)',
+  tertiary: '#EFEFEF',
   grey: '#9C9C9C',
-  lightGrey: '#D4D4D4',
-  green: '#19C37D',
+  lightGrey: 'rgba(231, 231, 231, 0.8)',
   red: '#ED1F43',
+  primaryTransp: 'rgba(0, 150, 136, 0.2)',
 };
 
 const FONT = {
@@ -47,7 +47,7 @@ const SHADOWS = {
     },
     shadowOpacity: 0.25,
     shadowRadius: 5.84,
-    elevation: 5,
+    elevation: 4,
   },
 };
 

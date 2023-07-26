@@ -3,15 +3,13 @@ import {FONT, COLORS, SIZES, SHADOWS} from '../../../constants/theme';
 
 export const styles = StyleSheet.create({
   picOfTheDayCard: {
-    paddingTop: SIZES.medium,
-    paddingLeft: SIZES.medium,
-    paddingRight: SIZES.medium,
+    padding: SIZES.medium,
     marginVertical: SIZES.medium,
     backgroundColor: COLORS.lightGrey,
   },
 
   shadowProp: {
-    ...SHADOWS.medium,
+    ...SHADOWS.small,
   },
 
   picOfTheDayTextsContainer: {
@@ -30,6 +28,9 @@ export const styles = StyleSheet.create({
     fontFamily: FONT.semibold,
     fontSize: SIZES.small,
     color: COLORS.tertiary,
+    backgroundColor: COLORS.secondary,
+    borderRadius: SIZES.small,
+    padding: SIZES.xSmall,
   },
 
   picOfTheDayImage: {
@@ -38,6 +39,7 @@ export const styles = StyleSheet.create({
     marginTop: SIZES.small,
     borderRadius: SIZES.small,
   },
+
   picOfTheDayTitle: {
     fontFamily: FONT.semiBoldItalic,
     fontSize: SIZES.medium,
@@ -48,7 +50,13 @@ export const styles = StyleSheet.create({
   picOfTheDayCopyright: {
     fontFamily: FONT.bold,
     fontSize: SIZES.small,
-    color: COLORS.tertiary,
+    color: COLORS.secondary,
     textAlign: 'center',
+  },
+
+  iconContainer: {
+    borderRadius: SIZES.xxLarge,
+    backgroundColor: COLORS.primary,
+    padding: SIZES.xSmall,
   },
 });
